@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around; /* Puts logo on left, links on right */
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center; /* Centers everything Horizontally*/
+  align-items: center; /* Centers everything vertically*/
+  list-style: none;
+  gap: 7rem; /* adds even spacing between all items */
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none; /* Removes the underline */
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #ff9900; /* Changes color when you hover over it */
+}
+
+.logo img {
+  height: 40px;    /* Adjust this to fit your bar's height */
+  width: auto;     /* This keeps the logo from stretching */
+  display: block;  /* Removes weird extra spacing at the bottom */
+}
+
+/* Optional: Add a little hover effect to the logo */
+.logo img:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}

@@ -1,0 +1,55 @@
+.newsCardholder {
+    background-color: #f4f4f4;
+    display: flex; /* Turns the container into a flexbox */
+    flex-direction: row; /* Aligns items side-by-side */
+    justify-content: center; /* Centers the group of cards in the middle of the screen */
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap; /* VERY IMPORTANT: Allows cards to move to the next line on small screens */
+}
+
+/* The container holds the card */
+
+.news-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4; /* Light Grey background to make the card pop */
+}
+
+/* the actual card */
+.news-box {
+    background-color: white;
+    max-width: 600px; /* Keeps the text from getting too wide */
+    border-radius: 12px; /* Rounded Corners */
+    overflow: hidden; /* Ensures the image follows the rounded corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease;
+}
+
+.news-container :hover {
+    transform: translateY(-5px); /* Subtle lift effect when hovering */
+}
+
+/* The Image */
+.newsImage {
+    width: 100%; /* Makes the image fill the width of the card */
+    height: 400px; /* sets a fixed height */
+    object-fit: cover; /* Crops the image perfectly without stretching it  */
+    display: block;
+}
+
+/* The Text Content */
+.news-box h1 {
+    padding: 20px 20px 10px 20px; /* Adds space between lines for readability */
+    font-family: 'Arial', sans-serif;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.news-box p {
+    padding: 0 20px 20px 20px;
+    line-height: 1.6; /* Adds space between lines for readability */
+    color: #666;
+    font-size: 1rem;
+}
