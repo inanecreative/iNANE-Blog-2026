@@ -64,6 +64,131 @@
 
 
 
+
+
+
+
+/*Nye Livestream Section*/
+
+.nyeLiveSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px; /* space between columns */
+    padding: 40px;
+    max-width: 1600px; /* Prevents it from getting too wide on huge monitors */
+    margin: 0 auto; /* Centers the whole section on the page */ 
+    background-color: #1a1a1a; /* Dark theme looks great for livestreams */
+    color: white;
+
+}
+
+/* LEFT SIDEBAR: About & Socials */
+.aboutNye {
+    flex: 1; /* takes up 1 'unit' of space */
+    min-width: 250px;
+}
+ 
+.aboutNyeImg {
+    width: 80px; /* small profile circle like in sketch */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover; 
+}
+
+.nyeSocials {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    display: flex;
+    gap: 30px;
+}
+
+/* CENTER: The Main Stream */
+.nyeStream {
+    flex: 2.5; /* takes up 2.5 'units' of space-making it much bigger than the sides */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#twitch-embed {
+    width: 100%; /* Spans the full width of the 2.5 unit center */
+    aspect-ratio: 16 / 9; /* Maintains the cinematic stream shape */
+    background: #000;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Adds depth to the 'Big' Window */
+}
+
+/* RIGHT SIDEBAR: Games Grid + Hover Effect */
+.nyeGames {
+    flex: 1; /* Matches the left sidebar for symmetry */
+    min-width: 250px;
+}
+
+.gamesPlayedImgs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns like my sketch */
+    gap: 15px;
+}
+
+/* ENSURING THE IMAGES ON THE SIDEBARS DONT LOOK TINY */
+.aboutNyeImg, .game-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* THE HOVER BOX LOGIC */
+.game-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.game-item img {
+    width: 100%;
+    aspect-ratio: 1/1; /* Keeps them as circles/ squares */
+    border-radius: 50%; /* Starts as circles like your drawing */
+    transition: 0.3s;
+
+}
+
+/* The hidden name tag */
+.game-name {
+    position: absolute;
+    botttom: -5px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.game-item:hover img {
+    border-radius: 8px; /* Turns into a square on hover */
+}
+
+.game-item:hover .game-name {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
 /*  THE BACKGROUND OVERLAY */
 .modal {
     display: none; /* hidden by default */
