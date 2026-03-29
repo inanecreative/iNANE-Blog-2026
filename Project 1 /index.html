@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="home.css">
     </head>
     <body>
+
+                <!-- NAV BAR -->
         <div class="navbar">
                 <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -29,6 +31,9 @@
             <li><a href="#music-ratings">Music Ratings</a></li>
                 </ul>    
         </div>
+
+        <!-- NEWS CARD SECTION -->
+
                 <div class="newsCardholder">
         <div class="news">
             <section class="news-container">
@@ -78,7 +83,76 @@
         </div>
                 </div>
 
+                    <!-- NYE LIVESTREAM SECTION -->
+
+                    <section id="nyeLiveSection" class="nyeLiveSection">
+                        <div class="aboutNye">
+                            <img id="aboutNyeImg" class="aboutNyeImg" src="images/nyeShades.png" alt="Nye-Shades">
+                            <h1>About Nyeceaux</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae 
+                                pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean 
+                                sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa 
+                                nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
+                                Ad litora torquent per conubia nostra inceptos himenaeos.
+
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+                                Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                                Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia 
+                                integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per 
+                                conubia nostra inceptos himenaeos.
+
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
+                                sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                                Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer 
+                                nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra 
+                                inceptos himenaeos.
+                            </p>
+                            <div class="nyeSocials">
+                                <a href="https://www.twitch.tv/nyeceaux">
+                                    <i class="fa-brands fa-twitch"></i>
+                                </a>
+
+                                <a href="https://www.instagram.com/nyeceaux">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                                <a href="https://www.youtube.com/@nyeceaux">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+
+                                <a href="https://www.tiktok.com/@nyeceaux1">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="nyeStream">
+                                <!-- Add a placeholder for the Twitch embed -->
+                                <div id="twitch-embed" class="nyeTwitch"></div>
+
+                                <!-- Load the Twitch embed script -->
+                                <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+                                <!-- Create a Twitch.Player object. This will render within the placeholder div -->
+                                <script type="text/javascript">
+                                new Twitch.Player("twitch-embed", {
+                                    channel: "nyeceaux"
+                                });
+                                </script>
+
+                                
+                        </div>
+
+                        <div class="nyeGames">
+                            
+                        </div>
+                    </section>
+
+
+
         <script src="functions.js" async defer></script>
+        <script src="https://kit.fontawesome.com/85f17716f7.js" crossorigin="anonymous"></script>
 
                 <div id="newsModal" class="modal">
                     <span class="close-modal">&times;</span>
