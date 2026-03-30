@@ -4,14 +4,17 @@
     display: flex; /* Turns the container into a flexbox */
     flex-direction: row; /* Aligns items side-by-side */
     justify-content: center; /* Centers the group of cards in the middle of the screen */
+    width:  100%;
     gap: 20px;
     padding: 40px;
     flex-wrap: wrap; /* VERY IMPORTANT: Allows cards to move to the next line on small screens */
+    box-sizing: border-box; /* Have this set on all MAIN containers so the sixe of said 'containers' is calculated the same */
 }
 
 .news {
     flex: 1 1 300px;
     max-width: 400px;
+    display:flex; /* Make this a flex container too */
 }
 
 /* The container holds the card */
@@ -21,10 +24,13 @@
     justify-content: center;
     padding: 50px 20px;
     background-color: #f4f4f4; /* Light Grey background to make the card pop */
+    width: 100%;
 }
 
 /* the actual card */
 .news-box {
+    display:flex;
+    flex-direction: column; /* stacks image and text vertically */
     background-color: white;
     max-width: 600px; /* Keeps the text from getting too wide */
     border-radius: 12px; /* Rounded Corners */
@@ -32,6 +38,8 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Soft shadow for depth */
     transition: transform 0.3s ease;
     cursor: pointer;
+    width: 100%; /* fill the width of the container */
+    /* Background, border-radius, etc. stay the same */
 }
 
 .news-container :hover {
@@ -73,14 +81,15 @@
 .nyeLiveSection {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between; /* pushes outer items to the edges  */
     align-items: flex-start;
-    gap: 30px; /* space between columns */
-    padding: 40px;
-    max-width: 1600px; /* Prevents it from getting too wide on huge monitors */
-    margin: 0 auto; /* Centers the whole section on the page */ 
+    gap: 40px; /* space between columns */
+    padding: 40px 30px; /* Keeps Top/Bottom padding but removes the side padding (0) */
+    width: 100%; /* Ensures the container spans the  full screen width */
+    margin: 0; /* Removes any centering Margins */ 
     background-color: #1a1a1a; /* Dark theme looks great for livestreams */
     color: white;
+    box-sizing: border-box;
 
 }
 
@@ -98,11 +107,18 @@
 }
 
 .nyeSocials {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
     border-top: 1px solid #444;
     padding-top: 15px;
     display: flex;
-    gap: 30px;
+    gap: 50px;
+}
+
+.nyeSocialIcon{
+    color: #f4f4f4;
+    font-size: 2rem;
 }
 
 /* CENTER: The Main Stream */
@@ -136,7 +152,7 @@
 
 /* ENSURING THE IMAGES ON THE SIDEBARS DONT LOOK TINY */
 .aboutNyeImg, .game-item img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
 }
 
@@ -165,10 +181,11 @@
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 0.8rem;
-    white-space: nowrap;
+    white-space: wrap;
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
+    z-index: 2000;
 }
 
 .game-item:hover img {

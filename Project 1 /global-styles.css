@@ -10,7 +10,9 @@ body {
   align-items: center;
   background-color: #333;
   padding: 1rem 2rem;
+  width: 100%;
   color: white;
+  box-sizing: border-box;
 }
 
 .nav-links {
