@@ -32,14 +32,14 @@
     display:flex;
     flex-direction: column; /* stacks image and text vertically */
     background-color: white;
-    max-width: 600px; /* Keeps the text from getting too wide */
-    border-radius: 12px; /* Rounded Corners */
-    overflow: hidden; /* Ensures the image follows the rounded corners */
+    max-width: 600px;       /* Keeps the text from getting too wide */
+    border-radius: 12px;    /* Rounded Corners */
+    overflow: hidden;       /* Ensures the image follows the rounded corners */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Soft shadow for depth */
     transition: transform 0.3s ease;
     cursor: pointer;
-    width: 100%; /* fill the width of the container */
-    /* Background, border-radius, etc. stay the same */
+    width: 100%;            /* fill the width of the container */
+                            /* Background, border-radius, etc. stay the same */
 }
 
 .news-container :hover {
@@ -48,8 +48,8 @@
 
 /* The Image */
 .newsImage {
-    width: 100%; /* Makes the image fill the width of the card */
-    height: 400px; /* sets a fixed height */
+    width: 100%;       /* Makes the image fill the width of the card */
+    height: 400px;     /* sets a fixed height */
     object-fit: cover; /* Crops the image perfectly without stretching it  */
     display: block;
 }
@@ -83,11 +83,11 @@
     flex-direction: row;
     justify-content: space-between; /* pushes outer items to the edges  */
     align-items: flex-start;
-    gap: 40px; /* space between columns */
-    padding: 40px 30px; /* Keeps Top/Bottom padding but removes the side padding (0) */
-    width: 100%; /* Ensures the container spans the  full screen width */
-    margin: 0; /* Removes any centering Margins */ 
-    background-color: #1a1a1a; /* Dark theme looks great for livestreams */
+    gap: 40px;                      /* space between columns */
+    padding: 40px 30px;             /* Keeps Top/Bottom padding but removes the side padding (0) */
+    width: 100%;                    /* Ensures the container spans the  full screen width */
+    margin: 0;                      /* Removes any centering Margins */ 
+    background-color: #1a1a1a;    /* Dark theme looks great for livestreams */
     color: white;
     box-sizing: border-box;
 
@@ -131,8 +131,8 @@
 }
 
 #twitch-embed {
-    width: 100%; /* Spans the full width of the 2.5 unit center */
-    aspect-ratio: 16 / 9; /* Maintains the cinematic stream shape */
+    width: 100%;                              /* Spans the full width of the 2.5 unit center */
+    aspect-ratio: 16 / 9;                     /* Maintains the cinematic stream shape */
     background: #000;
     border-radius: 12px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Adds depth to the 'Big' Window */
@@ -164,7 +164,7 @@
 
 .game-item img {
     width: 100%;
-    aspect-ratio: 1/1; /* Keeps them as circles/ squares */
+    aspect-ratio: 1/1;  /* Keeps them as circles/ squares */
     border-radius: 50%; /* Starts as circles like your drawing */
     transition: 0.3s;
 
@@ -196,6 +196,79 @@
     opacity: 1;
     transform: scale(1.1);
 }
+
+        /* VELVETEEN SECTION */
+/* --- CORE LAYOUT: flexbox ---*/
+.velveteenSection {
+    display:flex; /* The magic starts here: makes children sit side by side */
+    gap: 40px;    /* Creates space between the two columns */
+    padding: 20px;
+    align-items: flex-start; /* Prevents right column from stretching oddly */
+    background-color: #f4f4f4;
+}
+
+/*LEFT COLUMN (Video Section)*/
+.beatSection {
+    flex: 2; /*Gives more width the the video grid (approx 66%) */
+}
+
+/*THE RIGHT COLUMN (About Section)*/
+.aboutVelveteen {
+    flex: 1; /* Gives less width to the text (approx 33%) */
+}
+
+
+/* --- Video Grid Styles (Responsive Grid) ---  */
+.beatGrid {
+    display: grid; 
+    /* This automatically creates as many 300px columns as will fit */
+    grid-template-columns: repeat(auto-fill, minmax(290px, 2fr));
+    gap: 20px;
+}
+
+.beatTitle {
+    text-align: center; /* Centers the text horizontally */
+    width: 100%;        /* Ensures it takes up the full width of the container */
+    margin-bottom: 30px; /* Adds some breathing room before the videos start */
+}
+
+/* Forcing the YouTube iframe to be responsive and match a 16:9 ratio */
+.youtubeBeat iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Modern Replacement for padding bottom hack */
+    height: auto;
+    border-radius: 5%;
+    box-shadow: 0px 10px 17px -5px rgba(0, 0, 0, 0.37);
+    border-radius: 12px;
+}
+
+/* About Text Section Styliing */
+
+.velveteenPlayer iframe {
+    padding: 10px;
+}
+
+.aboutVelveteen h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.aboutVelveteen p {
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+/* --- Mobile View (Responsive Stacking) --- */
+@media (max-width: 900px) {
+    .velveteenSection {
+        flex-direction: column; /* stack vertically on small screens  */
+
+    }
+}
+
+
+
+
 
 
 
